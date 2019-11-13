@@ -1,32 +1,45 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-content>
+      <v-app-bar
+        color="#6A76AB" dark prominent
+        :src="require('@/assets/img/app-bar-tcc.jpg')"
+        fade-img-on-scroll
+      >
+        <template v-slot:img="{ props }">
+          <v-img v-bind="props"
+            gradient="to left bottom, #484848d9, #173469e8"
+          ></v-img>
+        </template>
+        <div class="custom-app-bar__title display-1">
+          Build your development environment quickly.
+        </div>
+      </v-app-bar>
+      <HelloWorld/>
+    </v-content>
+  </v-app>
 </template>
 
+<script>
+import HelloWorld from './components/HelloWorld';
+
+export default {
+  name: 'App',
+
+  components: {
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .custom-app-bar__title {
+    width: 100%;
+    align-self: flex-end;
+    text-align: center;
   }
-}
 </style>
