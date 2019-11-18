@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-content class="grey darken-3">
       <v-app-bar
         color="#6A76AB" dark prominent
         :src="require('@/assets/img/app-bar-tcc.jpg')"
@@ -11,23 +11,23 @@
             gradient="to left bottom, #484848d9, #173469e8"
           ></v-img>
         </template>
-        <div class="custom-app-bar__title display-1">
+        <div class="custom-app-bar__title display-3 mb-2">
           Build your development environment quickly.
         </div>
       </v-app-bar>
-      <HelloWorld/>
+      <dashboard/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Dashboard from './components/Dashboard';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Dashboard,
   },
 
   data: () => ({
