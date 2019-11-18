@@ -88,7 +88,7 @@
                 :items="envImages"
                 :items-per-page="8"
                 class="elevation-0 custom-datatable"
-                no-data-text="Ambiente desligado."
+                no-data-text="Environment stopped."
               >
                 <template v-slot:item.ports="{ item }">
                   <span v-if="item.ports">{{ item.ports.join(", ") }}</span>
