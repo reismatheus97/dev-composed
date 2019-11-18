@@ -7,9 +7,7 @@
         fade-img-on-scroll
       >
         <template v-slot:img="{ props }">
-          <v-img v-bind="props"
-            gradient="to left bottom, #484848d9, #173469e8"
-          ></v-img>
+          <v-img v-bind="props" gradient="to left bottom, #484848d9, #173469e8"></v-img>
         </template>
         <div class="custom-app-bar__title display-3 mb-2">
           Build your development environment quickly.

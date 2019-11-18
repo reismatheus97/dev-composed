@@ -1,9 +1,10 @@
 import * as compose from 'docker-compose'
-// import dockerImages from '../database/docker-images'
+import path from 'path'
 
-const __COMPOSER_DIR = '/home/reismatheus97/docker-workspace/dev-composed/src/database/composetest'
+const __COMPOSER_DIR = path.join(path.resolve() + '/src/database/compose_env')
 
-console.log(compose)
+
+console.log(__COMPOSER_DIR)
 
 const upEnv = (services = []) => {
 	console.log(services)
@@ -16,7 +17,7 @@ const upEnv = (services = []) => {
 		() => {
 			console.log('+ `up` done')
 		},
-			err => { console.log('something went wrong:', err.message)}
+			err => { console.log('something went wrong:', err)}
 	)
 }
 

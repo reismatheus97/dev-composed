@@ -12,6 +12,7 @@ services:
       - 3000:3000
     volumes:
       - ./node_app:/usr/app
+      - /usr/app/node_modules
   redis:
     image: redis:alpine
     ports:

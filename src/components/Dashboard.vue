@@ -90,6 +90,9 @@
                 class="elevation-0 custom-datatable"
                 no-data-text="Environment stopped."
               >
+                <template v-slot:item.status="{ item }">
+                  <span>{{ item.status ? "On" : "Off" }}</span>
+                </template>
                 <template v-slot:item.ports="{ item }">
                   <span v-if="item.ports">{{ item.ports.join(", ") }}</span>
                 </template>
