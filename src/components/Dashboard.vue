@@ -6,7 +6,7 @@
           1. <span class="blue--text">Choose your stack</span>
         </section>
         <v-sheet dark class="mx-auto my-8 transparent" elevation="0">
-          <v-slide-group v-if="dockerImages" class="pa-4" multiple show-arrows>
+          <v-slide-group v-if="dockerImages" class="pa-4" multiple show-arrows :key="slideGroupKey">
             <v-slide-item v-for="(image, idx) in dockerImages" :key="idx"
               v-slot:default="{ active, toggle }"
             >
@@ -164,6 +164,7 @@ export default {
   name: 'Dashboard',
 
   data: () => ({
+    slideGroupKey: 0,
     dockerImages,
     headers: [
       { text: "ID", value: "picture"},
@@ -218,6 +219,7 @@ export default {
       } finally {
         this.loading = false
         this.selectedImages = []
+        this.slideGroupKey = Date.now()
         await checkEnv()
       }
     },
