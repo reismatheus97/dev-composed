@@ -4,10 +4,9 @@
       <v-app-bar
         color="#6A76AB" dark prominent
         :src="require('@/assets/img/app-bar-tcc.jpg')"
-        fade-img-on-scroll
       >
         <template v-slot:img="{ props }">
-          <v-img v-bind="props" gradient="to left bottom, #484848d9, #173469e8"></v-img>
+          <v-img v-bind="props" gradient="to left bottom, #b1b1b1, #000000e0"></v-img>
         </template>
         <div class="custom-app-bar__title display-3 mb-2">
           Build your development environment quickly.
