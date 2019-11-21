@@ -68,27 +68,13 @@
             3. <span class="blue--text">Start managing your environment</span>
           </section>
           <v-layout py-12 wrap>
-            <!-- <v-flex xs12 py-4 grey darken-2>
-              <v-layout align-center>
-                <v-flex xs8>
-                  <span class="display-1 vertical-middle">Check status</span>
-                </v-flex>
-                <v-flex xs4>
-                  <v-btn width="150" height="65" color="light-blue elevation-4"
-                    @click="checkEnv" :loading="loading" class="mx-3" text
-                  >
-                    <span class="headline light-blue--text">Refresh</span>
-                  </v-btn>
-                </v-flex>
-              </v-layout>
-            </v-flex> -->
             <v-flex xs12>
               <v-data-table
                 :headers="headers" dark
                 :items="envImages"
                 :items-per-page="8"
                 class="elevation-0 custom-datatable"
-                no-data-text="Environment stopped."
+                no-data-text="Nothing running here."
               >
                 <template v-slot:item.status="{ item }">
                   <span>{{ item.status ? "On" : "Off" }}</span>
@@ -123,35 +109,6 @@
                 </template>
               </v-data-table>
             </v-flex>
-            <!-- <v-flex xs12 py-4 grey darken-2>
-              <v-layout align-center>
-                <v-flex xs8>
-                  <span class="display-1 vertical-middle">Start your workspace</span>
-                </v-flex>
-                <v-flex xs4>
-                  <v-btn width="150" height="65" color="green elevation-4"
-                    @click="startMany" :loading="loading" class="mx-3" text
-                  >
-                    <span class="headline green--text">Start</span>
-                  </v-btn>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-            <v-divider></v-divider>
-            <v-flex xs12 py-4 grey darken-2>
-              <v-layout align-center>
-                <v-flex xs8>
-                  <span class="display-1">Stop all containers</span>
-                </v-flex>
-                <v-flex xs4>
-                  <v-btn width="150" height="65" color="red elevation-4"
-                    @click="dropAll" :loading="loading" class="mx-3" text
-                  >
-                    <span class="headline red--text">Stop</span>
-                  </v-btn>
-                </v-flex>
-              </v-layout>
-            </v-flex> -->
           </v-layout>
         </v-flex>
       </v-scroll-y-transition>
