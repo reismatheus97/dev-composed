@@ -17,9 +17,10 @@ const upEnv = (services = []) => {
 		() => {
 			console.log('+ `up` done')
 		},
-			err => { console.log('something went wrong:', err)}
+		err => { console.log('something went wrong:', err) }
 	)
 }
+
 
 const stop = (service = '') => compose.stopOne(
 	service,
@@ -29,18 +30,18 @@ const stop = (service = '') => compose.stopOne(
 		() => {
 			console.log('+ `upAll` done')
 		},
-			err => { console.log('something went wrong:', err.message)}
+		err => { console.log('something went wrong:', err.message) }
 	);
 
 
 const buildEnv = () => compose.buildAll({
-		cwd: __COMPOSER_DIR, log: true
-	}).then(
-		res => {
-			console.log('+ `upAll` done', res)
-		},
-			err => { console.log('something went wrong:', err.message)}
-		);
+	cwd: __COMPOSER_DIR, log: true
+}).then(
+	res => {
+		console.log('+ `upAll` done', res)
+	},
+	err => { console.log('something went wrong:', err.message) }
+);
 
 
 const upAll = () => compose.upAll({
@@ -49,8 +50,8 @@ const upAll = () => compose.upAll({
 	res => {
 		console.log('+ `upAll` done', res)
 	},
-		err => { console.log('something went wrong:', err.message)}
-	);
+	err => { console.log('something went wrong:', err.message) }
+);
 
 
 const dropAll = () => compose.down({
@@ -59,8 +60,9 @@ const dropAll = () => compose.down({
 	res => {
 		console.log('+ `dropEnv` done', res)
 	},
-		err => { console.log('something went wrong:', err.message)}
-	);
+	err => { console.log('something went wrong:', err.message) }
+);
+
 
 const checkEnv = (images = []) => compose.ps({
 	cwd: __COMPOSER_DIR, log: true
@@ -84,8 +86,8 @@ const checkEnv = (images = []) => compose.ps({
 		console.log(outImages)
 		return outImages
 	},
-		err => { console.log('something went wrong:', err.message)}
-	);
+	err => { console.log('something went wrong:', err.message) }
+);
 
 
 export {
