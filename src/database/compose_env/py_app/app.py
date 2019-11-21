@@ -25,6 +25,6 @@ def hello():
     return 'Hello World! I have been seen {} times.\n'.format(count)
 
 
-@app.route('/test')
+@app.route('/teste')
 def test():
     return 'Redis port: {}'.format(os.environ['REDIS_PORT'])

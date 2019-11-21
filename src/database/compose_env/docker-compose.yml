@@ -2,6 +2,8 @@ version: '3'
 services:
   pyapp:
     build: "./py_app"
+    volumes:
+      - ./py_app/app.py:/app.py
     environment:
       - REDIS_PORT=6379
     ports:
