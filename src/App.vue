@@ -6,7 +6,7 @@
         :src="require('@/assets/img/app-bar-tcc.jpg')"
       >
         <template v-slot:img="{ props }">
-          <v-img v-bind="props" gradient="to left bottom, #b1b1b1, #000000e0"></v-img>
+          <v-img v-bind="props" gradient="to left bottom, rgb(72, 72, 72), #050315eb"></v-img>
         </template>
         <div class="custom-app-bar__title display-3 mb-2">
           Build your development environment quickly.

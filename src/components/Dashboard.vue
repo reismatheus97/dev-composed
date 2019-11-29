@@ -127,7 +127,7 @@ export default {
     slideGroupKey: 0,
     dockerImages,
     headers: [
-      { text: "ID", value: "picture"},
+      { text: "ID", value: "name"},
       { text: "Status", value: "status" },
       { text: "Ports", value: "ports" }
     ],
@@ -156,7 +156,7 @@ export default {
         console.log(error)
       } finally {
         this.loading = false
-        await checkEnv()
+        await this.checkEnv()
       }
     },
     async startAll () {
@@ -167,7 +167,7 @@ export default {
         console.log(error)
       } finally {
         this.loading = false
-        await checkEnv()
+        await this.checkEnv()
       }
     },
     async dropAll () {
@@ -180,7 +180,7 @@ export default {
         this.loading = false
         this.selectedImages = []
         this.slideGroupKey = Date.now()
-        await checkEnv()
+        await this.checkEnv()
       }
     },
     async checkEnv () {
