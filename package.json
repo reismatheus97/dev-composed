@@ -2,7 +2,7 @@
   "name": "test",
   "productName": "test",
   "version": "0.0.1",
-  "author": "Matheus Reis <matheus.reis@petragold.com.br>",
+  "author": "Matheus Reis <reismatheus97@gmail.com>",
   "description": "An electron-vue project",
   "license": null,
   "main": "./dist/electron/main.js",
